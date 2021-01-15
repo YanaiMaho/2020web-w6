@@ -23,6 +23,17 @@
       border-radius: 50%;
       transform: rotate(360deg);
     }
+    .win2 {
+      background: orange;
+      border-radius: 30px;
+      transform: rotate(360deg);
+    }
+    .win3 {
+      background: yellow;
+      border-radius: 10px;
+      transform: rotate(360deg);
+    }
+
     .lose {
       transform: scale(0.9);
     }
@@ -33,28 +44,34 @@
   <script>
     'use strict';
 
+
     const num = 10;
-    
-    const k = Math.floor(Math.random() * num); // 0 - 4
-    for (let i = 0; i < num; i++) {
+
+
+
+
+
+      for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
-      
+const omikuzi = Math.floor(Math.random() * 4);
       div.addEventListener('click', () => {
-        var k = Math.random(3);
-        if (k === 0) {
-          div.textContent = '大吉!';
-          div.classList.add('大吉');
-        } else if(k === 1){
-          div.textContent = '中吉!';
-          div.classList.add('中吉');
-        }else if(k === 2){
-          div.textContent = '小吉!';
-          div.classList.add('小吉');
-        }else if(k === 3){
-          div.textContent = '凶!';
-          div.classList.add('凶');
-        }
+
+
+        if (omikuzi === 0) {
+         div.textContent = '大吉!';
+         div.classList.add('win');
+       } else if(omikuzi === 1){
+         div.textContent = '中吉!';
+         div.classList.add('win2');
+       }else if(omikuzi === 2){
+         div.textContent = '小吉!';
+         div.classList.add('win3');
+       }else{
+         div.textContent = '凶!';
+         div.classList.add('lose');
+       }
+
       });
 
       document.body.appendChild(div);
@@ -62,3 +79,4 @@
   </script>
 </body>
 </html>
+
